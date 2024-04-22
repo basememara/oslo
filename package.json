@@ -5,7 +5,7 @@
 	"description": "A collection of auth-related utilities",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
-	"module": "dist/index.js",
+	"module": "dist/cjs/index.js",
 	"scripts": {
 		"build": "rm -rf dist/* && tsc --project tsconfig.build.json",
 		"format": "prettier -w .",
@@ -16,16 +16,46 @@
 		"/dist/"
 	],
 	"exports": {
-		".": "./dist/index.js",
-		"./cookie": "./dist/cookie/index.js",
-		"./crypto": "./dist/crypto/index.js",
-		"./encoding": "./dist/encoding/index.js",
-		"./jwt": "./dist/jwt/index.js",
-		"./oauth2": "./dist/oauth2/index.js",
-		"./otp": "./dist/otp/index.js",
-		"./password": "./dist/password/index.js",
-		"./request": "./dist/request/index.js",
-		"./webauthn": "./dist/webauthn/index.js"
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/cjs/index.js"
+		},
+		"./cookie": {
+			"import": "./dist/cookie/index.js",
+			"require": "./dist/cjs/cookie/index.js"
+		},
+		"./crypto": {
+			"import": "./dist/crypto/index.js",
+			"require": "./dist/cjs/crypto/index.js"
+		},
+		"./encoding": {
+			"import": "./dist/encoding/index.js",
+			"require": "./dist/cjs/encoding/index.js"
+		},
+		"./jwt": {
+			"import": "./dist/jwt/index.js",
+			"require": "./dist/cjs/jwt/index.js"
+		},
+		"./oauth2": {
+			"import": "./dist/oauth2/index.js",
+			"require": "./dist/cjs/oauth2/index.js"
+		},
+		"./otp": {
+			"import": "./dist/otp/index.js",
+			"require": "./dist/cjs/otp/index.js"
+		},
+		"./password": {
+			"import": "./dist/password/index.js",
+			"require": "./dist/cjs/password/index.js"
+		},
+		"./request": {
+			"import": "./dist/request/index.js",
+			"require": "./dist/cjs/request/index.js"
+		},
+		"./webauthn": {
+			"import": "./dist/webauthn/index.js",
+			"require": "./dist/cjs/webauthn/index.js"
+		}
 	},
 	"typesVersions": {
 		"*": {
